@@ -11,6 +11,7 @@
 		ABA49A8A2C202DDA004888CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA49A892C202DDA004888CC /* ContentView.swift */; };
 		ABA49A8C2C202DDB004888CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA49A8B2C202DDB004888CC /* Assets.xcassets */; };
 		ABA49A8F2C202DDB004888CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA49A8E2C202DDB004888CC /* Preview Assets.xcassets */; };
+		CEC130872C210D0600C6C151 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC130862C210D0600C6C151 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		ABA49A892C202DDA004888CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ABA49A8B2C202DDB004888CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA49A8E2C202DDB004888CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEC130862C210D0600C6C151 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				ABA49A872C202DDA004888CC /* _024_NC2_M20_ScreenTimeApp.swift */,
 				ABA49A892C202DDA004888CC /* ContentView.swift */,
+				CEC130862C210D0600C6C151 /* MainView.swift */,
 				ABA49A8B2C202DDB004888CC /* Assets.xcassets */,
 				ABA49A8D2C202DDB004888CC /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA49A8A2C202DDA004888CC /* ContentView.swift in Sources */,
+				CEC130872C210D0600C6C151 /* MainView.swift in Sources */,
 				ABA49A882C202DDA004888CC /* _024_NC2_M20_ScreenTimeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +276,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"2024-NC2-M20-ScreenTime/Preview Content\"";
-				DEVELOPMENT_TEAM = 583985W8L5;
+				DEVELOPMENT_TEAM = 2N9VY79TP6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -280,6 +284,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,7 +306,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"2024-NC2-M20-ScreenTime/Preview Content\"";
-				DEVELOPMENT_TEAM = 583985W8L5;
+				DEVELOPMENT_TEAM = 2N9VY79TP6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -309,6 +314,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
