@@ -1,14 +1,37 @@
 # 2024-NC2-M20-ScreenTime
+2024 Apple Deveopler Academy @ POSTECH, Morning Session AengZi & TEO
+
+
+📅 2024.06.10(Mon) - 2024.06.21(Fri)
+
+
+📲 ios 17.4/SwiftUI/
+
+
 ## 🎥 Youtube Link
 (추후 만들어진 유튜브 링크 추가)
 
 ## 💡 About Augmented Reality
-(해당 기술에 대한 조사 내용 정리)
+### ⏳ Screen Time
 
-> **예시** <br/><br/>
-_(내용 중략) <br/>
-ARKit에서 ARSCNView가 있다는 것을 알게 되었고, ARSCNView에서는 SceneKit을 활용하여 3D 콘텐츠를 증강하여 추가할 수 있다는 것을 알게 되었다. <br/>
-(내용 중략)_
+
+
+> 디지털 기기의 사용 시간을 추적하고 관리할 수 있는 기능
+> 
+
+**Screen Time**은 웹 사용 데이터를 공유 및 추적, 관리하는 것과 관련된 기술입니다.
+
+$\color{#5c56d2} \bf 기기$ $\color{#5c56d2} \bf 사용시간$ $\color{#5c56d2} \bf 추적$ DeviceActivity
+
+기기 사용시간, 앱 서비스, 웹 사이트에 머문 시간을 추적하고 기록, 분석할 수 있습니다.
+
+$\color{#5c56d2} \bf 스크린타임$ $\color{#5c56d2} \bf 제어$ Managed Settings
+
+기기 사용 시간을 추적해서 특정 어플이나 웹 사이트에 머무르는 시간을 제어할 수 있습니다.
+
+$\color{#5c56d2} \bf 스크린타임$ $\color{#5c56d2} \bf 사용량$ $\color{#5c56d2} \bf 공유$ FamilyControls
+
+보호자가 자녀의 스크린 타임을 공유받을 수 있고 그것을 보호차원에서 제한할 수 있습니다.
 
 ## 🎯 What we focus on?
 > **예시** <br/> ARKit에서 ARSCNView를 활용하고, SCNText를 사용하여 쉽게 3D 텍스트를 생성하고 SCNAction을 통해 쉽게 에니메이션을 추가한다.
