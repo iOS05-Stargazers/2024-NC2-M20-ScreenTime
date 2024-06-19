@@ -8,14 +8,18 @@
 import Foundation
 import SwiftUI
 
+
+
 struct RoutineButton25: View {
     @State var image: String
     @State var text: String
     
+    
     var body: some View {
+        
         Button {
             
-            // 네비게이션 연결해주세용
+           //
             
         } label: {
             ZStack {

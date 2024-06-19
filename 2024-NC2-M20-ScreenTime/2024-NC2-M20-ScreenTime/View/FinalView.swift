@@ -14,10 +14,10 @@ import SwiftUI
 
 struct FinalView: View {
     @State private var selectedTab = 0
-       init() {
-       UITabBar.appearance().backgroundColor = .main
-           UITabBar.appearance().unselectedItemTintColor = .sub
-       }
+    init() {
+        UITabBar.appearance().backgroundColor = .main
+        UITabBar.appearance().unselectedItemTintColor = .sub
+    }
     
     var body: some View {
         TabView{
@@ -42,7 +42,7 @@ struct FinalView: View {
                                 .frame(maxWidth: 25, maxHeight: 25)
                         }
                     }.padding(.all)
-                     .foregroundColor(.whitet)
+                        .foregroundColor(.whitet)
                     VStack{
                         ZStack{
                             Image("tomatotree")
@@ -111,7 +111,9 @@ struct FinalView: View {
                     Image(systemName: "person.crop.circle")
                     Text("내정보")
                 }
-        }.accentColor(.whitet)
+        }
+        .navigationBarBackButtonHidden()
+        .accentColor(.whitet)
     }
 }
 

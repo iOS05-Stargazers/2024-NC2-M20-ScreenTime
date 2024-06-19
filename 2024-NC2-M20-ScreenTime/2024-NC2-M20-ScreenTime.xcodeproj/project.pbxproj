@@ -13,6 +13,12 @@
 		ABA49A9D2C212580004888CC /* RoutinePrepareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA49A9C2C212580004888CC /* RoutinePrepareView.swift */; };
 		ABA49A9F2C212628004888CC /* Shape+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA49A9E2C212628004888CC /* Shape+Extension.swift */; };
 		ABA49AA32C212B53004888CC /* ManagedSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA49AA22C212B53004888CC /* ManagedSettingModel.swift */; };
+		AD66221B2C225E3900297711 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD66221A2C225E3900297711 /* MainView.swift */; };
+		AD66221D2C225EA600297711 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD66221C2C225EA600297711 /* ContentView.swift */; };
+		AD6622212C22677700297711 /* FocusTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6622202C22677700297711 /* FocusTimerView.swift */; };
+		AD6622232C22678800297711 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6622222C22678800297711 /* TimerModel.swift */; };
+		AD6622252C22A7A000297711 /* RestTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6622242C22A7A000297711 /* RestTimerView.swift */; };
+		AD66222B2C22AD4E00297711 /* CycleCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD66222A2C22AD4E00297711 /* CycleCountModel.swift */; };
 		CE4B39552C2129D000F69474 /* FullScreenView25.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B39542C2129D000F69474 /* FullScreenView25.swift */; };
 		CE4B395A2C21CB4600F69474 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B39592C21CB4600F69474 /* NextButton.swift */; };
 		CE4B395C2C21CC1800F69474 /* RoutineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B395B2C21CC1800F69474 /* RoutineButton.swift */; };
@@ -29,6 +35,12 @@
 		ABA49A9E2C212628004888CC /* Shape+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Extension.swift"; sourceTree = "<group>"; };
 		ABA49AA22C212B53004888CC /* ManagedSettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedSettingModel.swift; sourceTree = "<group>"; };
 		ABA49AA42C212BF8004888CC /* 2024-NC2-M20-ScreenTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "2024-NC2-M20-ScreenTime.entitlements"; sourceTree = "<group>"; };
+		AD66221A2C225E3900297711 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		AD66221C2C225EA600297711 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AD6622202C22677700297711 /* FocusTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimerView.swift; sourceTree = "<group>"; };
+		AD6622222C22678800297711 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		AD6622242C22A7A000297711 /* RestTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTimerView.swift; sourceTree = "<group>"; };
+		AD66222A2C22AD4E00297711 /* CycleCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleCountModel.swift; sourceTree = "<group>"; };
 		CE4B39542C2129D000F69474 /* FullScreenView25.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenView25.swift; sourceTree = "<group>"; };
 		CE4B39592C21CB4600F69474 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		CE4B395B2C21CC1800F69474 /* RoutineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineButton.swift; sourceTree = "<group>"; };
@@ -68,13 +80,12 @@
 			children = (
 				ABA49AA42C212BF8004888CC /* 2024-NC2-M20-ScreenTime.entitlements */,
 				ABA49A872C202DDA004888CC /* _024_NC2_M20_ScreenTimeApp.swift */,
-				ABA49A9C2C212580004888CC /* RoutinePrepareView.swift */,
-				ABA49AA22C212B53004888CC /* ManagedSettingModel.swift */,
-				ABA49A9E2C212628004888CC /* Shape+Extension.swift */,
+				AD66221E2C2265DD00297711 /* Utility */,
 				CE4B39572C21CB0900F69474 /* View */,
 				CE4B39562C21CB0000F69474 /* Components */,
-				ABA49A8B2C202DDB004888CC /* Assets.xcassets */,
+				AD66221F2C2265EA00297711 /* Model */,
 				ABA49A8D2C202DDB004888CC /* Preview Content */,
+				ABA49A8B2C202DDB004888CC /* Assets.xcassets */,
 			);
 			path = "2024-NC2-M20-ScreenTime";
 			sourceTree = "<group>";
@@ -85,6 +96,24 @@
 				ABA49A8E2C202DDB004888CC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AD66221E2C2265DD00297711 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				ABA49A9E2C212628004888CC /* Shape+Extension.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		AD66221F2C2265EA00297711 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD6622222C22678800297711 /* TimerModel.swift */,
+				ABA49AA22C212B53004888CC /* ManagedSettingModel.swift */,
+				AD66222A2C22AD4E00297711 /* CycleCountModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CE4B39562C21CB0000F69474 /* Components */ = {
@@ -99,9 +128,14 @@
 		CE4B39572C21CB0900F69474 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AD66221C2C225EA600297711 /* ContentView.swift */,
+				AD66221A2C225E3900297711 /* MainView.swift */,
+				CE4B395F2C21E69800F69474 /* FinalView.swift */,
+				ABA49A9C2C212580004888CC /* RoutinePrepareView.swift */,
 				CE4B39542C2129D000F69474 /* FullScreenView25.swift */,
 				CE4B39632C21EF7200F69474 /* FullScreenViewcycle.swift */,
-				CE4B395F2C21E69800F69474 /* FinalView.swift */,
+				AD6622202C22677700297711 /* FocusTimerView.swift */,
+				AD6622242C22A7A000297711 /* RestTimerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,13 +211,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA49AA32C212B53004888CC /* ManagedSettingModel.swift in Sources */,
+				AD66221D2C225EA600297711 /* ContentView.swift in Sources */,
 				ABA49A9F2C212628004888CC /* Shape+Extension.swift in Sources */,
 				CE4B395C2C21CC1800F69474 /* RoutineButton.swift in Sources */,
+				AD66221B2C225E3900297711 /* MainView.swift in Sources */,
 				CE4B395A2C21CB4600F69474 /* NextButton.swift in Sources */,
+				AD6622232C22678800297711 /* TimerModel.swift in Sources */,
+				AD6622212C22677700297711 /* FocusTimerView.swift in Sources */,
+				AD6622252C22A7A000297711 /* RestTimerView.swift in Sources */,
 				CE4B39642C21EF7200F69474 /* FullScreenViewcycle.swift in Sources */,
 				CE4B39602C21E69800F69474 /* FinalView.swift in Sources */,
 				CE4B39552C2129D000F69474 /* FullScreenView25.swift in Sources */,
 				ABA49A882C202DDA004888CC /* _024_NC2_M20_ScreenTimeApp.swift in Sources */,
+				AD66222B2C22AD4E00297711 /* CycleCountModel.swift in Sources */,
 				ABA49A9D2C212580004888CC /* RoutinePrepareView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

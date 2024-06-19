@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 struct FullScreenViewcycle: View{
+    @EnvironmentObject var cycleCountModel: CycleCountModel
+    @State var tagFullScreenView: Int? = nil
+
     var body: some View {
         VStack(alignment: .center){
             Spacer()
@@ -29,13 +32,58 @@ struct FullScreenViewcycle: View{
                 .foregroundColor(.blackt)
                 .multilineTextAlignment(.center)
             Spacer()
-            NextButtoncycle(text: "계속")
-            Spacer()
-                .frame(maxHeight: 32)
+            
+//            Button{
+//                cycleCountModel.isFinishedCycle += 1
+//                cycleCountModel.stack = .init()
+//            } label: {
+//                Text("계속")
+//                    .frame(width: 159, height: 50)
+//                    .tint(.white)
+//                    .background(.main)
+//                    .cornerRadius(30.0)
+//            }
+            Button{
+                cycleCountModel.isFinishedCycle += 1
+                self.tagFullScreenView = 1
+            } label: {
+                RoundedRectangle(cornerRadius: 30)
+                    .fill(.main)
+                    .frame(width: 159, height: 50)
+                    .overlay{
+                        Text("계속")
+                            .frame(width: 159, height: 50)
+                            .tint(.white)
+                            .background(.main)
+                            .cornerRadius(30.0)
+                    }
+            }
+            
+            // TODO: deprecated but check
+            NavigationLink(destination: ContentView().navigationBarBackButtonHidden(), tag: 1, selection: self.$tagFullScreenView) {
+                Text("")
+            }
+            
+            
+//            NavigationLink(destination: ContentView().navigationBarBackButtonHidden()) {
+//                Text("계속")
+//                    .frame(width: 159, height: 50)
+//                    .tint(.white)
+//                    .background(.main)
+//                    .cornerRadius(30.0)
+//            }
+//            .frame(width: 303.0, height: 71.0)
+//            .onTapGesture {
+//                cycleCountModel.isFinishedCycle += 1
+//                print("\(cycleCountModel.isFinishedCycle) FullScreenViewCycle")
+//            }
         }
+        .navigationBarBackButtonHidden()
+        Spacer()
+            .frame(maxHeight: 32)
     }
 }
 
-#Preview{
-    FullScreenViewcycle()
-}
+//#Preview{
+//    FullScreenViewcycle()
+//}

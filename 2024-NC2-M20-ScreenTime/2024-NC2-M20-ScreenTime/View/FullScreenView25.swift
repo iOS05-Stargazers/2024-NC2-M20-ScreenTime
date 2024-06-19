@@ -29,10 +29,40 @@ struct FullScreenView25: View{
                 .foregroundColor(.blackt)
                 .multilineTextAlignment(.center)
             Spacer()
-            NextButton25(text: "계속")
+            
+//            Button{
+//                self.tagRestTimerView = 1
+//            } label: {
+//                RoundedRectangle(cornerRadius: 30)
+//                    .fill(.main)
+//                    .frame(width: 159, height: 50)
+//                    .overlay{
+//                        Text("완료!")
+//                            .foregroundColor(.white)
+//                            .font(.callout)
+//                            .bold()
+//                    }
+//            }
+//            .padding(.top, 640)
+//            
+//            // TODO: deprecated but check
+//            NavigationLink(destination: FullScreenViewcycle(), tag: 1, selection: self.$tagRestTimerView) {
+//                Text("")
+//            }
+            
+            NavigationLink(destination: RestTimerView()) {
+                Text("계속")
+                    .frame(width: 159, height: 50)
+                    .tint(.whitet)
+                    .background(.main)
+                    .cornerRadius(30.0)
+                    .frame(width: 303.0, height: 71.0)
+            }
+            
             Spacer()
                 .frame(maxHeight: 32)
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

@@ -12,60 +12,67 @@ import FamilyControls
 struct RoutinePrepareView: View {
     @EnvironmentObject var managedSettingModel: ManagedSettingModel
     @State var isPresented = false
-    
+    @State var tagRoutinePrepareView: Int? = nil
     
     var body: some View {
-        NavigationStack{
-            VStack {
-                Rectangle()
-                    .fill(.main)
-                    .frame(maxWidth: .infinity, maxHeight: 273)
-                    .padding(.bottom)
-                    .overlay{
-                        Image("tomato2")
-                            .resizable()
-                            .frame(width: 256, height: 256)
-                        
-                        Text("25분-5분 루틴")
-                            .foregroundColor(.white)
-                            .font(.largeTitle)
-                            .bold()
-                            .padding(.top, 180)
-                        
-                    }
-                
-                VStack(alignment:.center) {
-                    AllowingApp()
-                    SelectApp()
+        VStack {
+            Rectangle()
+                .fill(.main)
+                .frame(maxWidth: .infinity, maxHeight: 273)
+                .padding(.bottom)
+                .overlay{
+                    Image("tomato2")
+                        .resizable()
+                        .frame(width: 256, height: 256)
+                    
+                    Text("25분-5분 루틴")
+                        .foregroundColor(.white)
+                        .font(.largeTitle)
+                        .bold()
+                        .padding(.top, 180)
+                    
                 }
-                .padding(.bottom, 20)
-
-                
-                AllowingTime()
-                
-                Spacer()
-                
-                Button{
-                    ManagedSettingModel.shared.setShieldRestrictions()
-                } label: {
-                    RoundedRectangle(cornerRadius: 30)
-                        .fill(.main)
-                        .frame(width: 159, height: 50)
-                        .overlay{
-                            Text("시작하기")
-                                .foregroundColor(.white)
-                                .font(.callout)
-                                .bold()
-                        }
-                }
-                .padding(.bottom, 60)
-                
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .ignoresSafeArea()
             
+            VStack(alignment:.center) {
+                AllowingApp()
+                SelectApp()
+            }
+            .padding(.bottom, 20)
+            
+            AllowingTime()
+            
+            Spacer()
+            
+            Button{
+                ManagedSettingModel.shared.setShieldRestrictions()
+                self.tagRoutinePrepareView = 1
+            } label: {
+                RoundedRectangle(cornerRadius: 30)
+                    .fill(.main)
+                    .frame(width: 159, height: 50)
+                    .overlay{
+                        Text("시작하기")
+                            .foregroundColor(.white)
+                            .font(.callout)
+                            .bold()
+                    }
+            }
+
+            // TODO: deprecated but check
+            NavigationLink(destination: FocusTimerView(), tag: 1, selection: self.$tagRoutinePrepareView) {
+                Text("")
+            }
+
+// CHECK: 동작X
+//            .gesture(TapGesture().onEnded{
+//                ManagedSettingModel.shared.setShieldRestrictions()
+//            })
+            .padding(.bottom, 60)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .ignoresSafeArea()
         .familyActivityPicker(isPresented: $isPresented, selection: $managedSettingModel.selectionToDiscourage)
+
     }
 }
 
@@ -173,7 +180,7 @@ extension RoutinePrepareView {
                                         .font(.caption)
                                         .padding(.leading)
                                         .padding(.top)
-
+                                    
                                     Spacer()
                                 }
                                 Spacer()
@@ -205,20 +212,25 @@ extension RoutinePrepareView {
             }
             
             HStack(spacing: 0){
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(.white)
-                    .frame(width: 334, height: 39)
-                    .shadow(radius: 10)
-                    .opacity(0.3)
-                    .overlay{
-                        HStack{
-                            Text("시간 제한 추가")
-                                .foregroundColor(.main)
-                                .font(.caption)
-                                .padding(.leading)
-                            Spacer()
+                Button{
+                    //
+                } label: {
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(.white)
+                        .frame(width: 334, height: 39)
+                        .shadow(radius: 10)
+                        .opacity(0.3)
+                        .overlay{
+                            HStack{
+                                Text("시간 제한 추가")
+                                    .foregroundColor(.main)
+                                    .font(.caption)
+                                    .padding(.leading)
+                                Spacer()
+                            }
                         }
-                    }
+                }
+
             }
         }
     }

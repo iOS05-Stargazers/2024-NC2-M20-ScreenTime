@@ -11,12 +11,14 @@ import FamilyControls
 @main
 struct _024_NC2_M20_ScreenTimeApp: App {
     @StateObject var managedSettingModel = ManagedSettingModel.shared
+    @StateObject var cycleCountModel = CycleCountModel()
     let center = AuthorizationCenter.shared
     
     var body: some Scene {
         WindowGroup {
-            RoutinePrepareView()
+            ContentView()
                 .environmentObject(managedSettingModel)
+                .environmentObject(cycleCountModel)
                 .onAppear {
                     Task {
                         do {
@@ -26,7 +28,7 @@ struct _024_NC2_M20_ScreenTimeApp: App {
                         }
                     }
                 }
-
+            
         }
     }
 }

@@ -63,7 +63,7 @@ struct NextButtoncycle: View {
         } label: {
             Text(text)
                 .frame(width: 159, height: 50)
-                .tint(.whitet)
+                .tint(.white)
                 .background(.main)
                 .cornerRadius(30.0)
         }
