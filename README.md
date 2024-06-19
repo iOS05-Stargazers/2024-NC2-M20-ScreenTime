@@ -15,8 +15,7 @@
 
 ## 💡 About Augmented Reality
 ### ⏳ Screen Time
-
-
+![ScreenTime](https://github.com/DeveloperAcademy-POSTECH/2024-NC2-M20-ScreenTime/blob/main/ScreenTime.png)
 
 > 디지털 기기의 사용 시간을 추적하고 관리할 수 있는 기능
 > 
