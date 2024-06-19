@@ -26,6 +26,7 @@ struct _024_NC2_M20_ScreenTimeApp: App {
                         }
                     }
                 }
+
         }
     }
 }
