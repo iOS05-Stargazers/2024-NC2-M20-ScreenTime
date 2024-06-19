@@ -11,7 +11,7 @@ import SwiftUI
 struct _024_NC2_M20_ScreenTimeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
