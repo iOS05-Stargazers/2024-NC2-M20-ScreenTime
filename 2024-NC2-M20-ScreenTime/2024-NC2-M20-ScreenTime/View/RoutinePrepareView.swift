@@ -32,6 +32,7 @@ struct RoutinePrepareView: View {
                         .padding(.top, 180)
                     
                 }
+                
             
             VStack(alignment:.center) {
                 AllowingApp()
@@ -130,26 +131,26 @@ extension RoutinePrepareView {
                                 }
                                 Spacer()
                                 
-                                if managedSettingModel.isSelectionEmpty() {
+                                if ManagedSettingModel.shared.isSelectionEmpty() {
                                     Image("emptygroup")
                                         .frame(height: 32)
                                         .padding(.bottom, 22)
                                     
                                 } else {
                                     HStack{
-                                        ForEach(Array(managedSettingModel.selectionToDiscourage.applicationTokens), id: \.self) { token in
+                                        ForEach(Array(ManagedSettingModel.shared.selectionToDiscourage.applicationTokens), id: \.self) { token in
                                             Label(token)
                                                 .labelStyle(IconOnlyLabelStyle())
-                                                .frame(width: 32, height: 32)
+                                                .frame(width: 40, height: 40)
                                                 .cornerRadius(8)
-                                                .padding(-10)
+                                                .padding(-16)
                                         }
-                                        ForEach(Array(managedSettingModel.selectionToDiscourage.categoryTokens), id: \.self) { token in
+                                        ForEach(Array(ManagedSettingModel.shared.selectionToDiscourage.categoryTokens), id: \.self) { token in
                                             Label(token)
                                                 .labelStyle(IconOnlyLabelStyle())
-                                                .frame(width: 32, height: 32)
+                                                .frame(width: 40, height: 40)
                                                 .cornerRadius(8)
-                                                .padding(-10)
+                                                .padding(-16)
                                         }
                                     }
                                     .padding(.bottom, 26)
