@@ -1,13 +1,9 @@
 # 2024-NC2-M20-ScreenTime
+<pre>
 2024 Apple Deveopler Academy @ POSTECH, Morning Session AengZi & TEO
-
-
 📅 2024.06.10(Mon) - 2024.06.21(Fri)
-
-
 📲 ios 17.4/SwiftUI/
-
-
+</pre>
 
 
 ## 🎥 Youtube Link
