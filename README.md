@@ -59,4 +59,151 @@ $\color{#5c56d2} \bf 스크린타임$ $\color{#5c56d2} \bf 사용량$ $\color{#5
 ![prototype](https://github.com/DeveloperAcademy-POSTECH/2024-NC2-M20-ScreenTime/blob/main/prototype.gif)
 
 ## 🛠️ About Code
-(핵심 코드에 대한 설명 추가)
+### 1. ManagedSetting 권한 요청
+
+---
+
+```swift
+import SwiftUI
+import FamilyControls
+
+@main
+struct ScreenTimeApp: App {
+    let center = AuthorizationCenter.shared
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+                .onAppear {
+                    Task {
+                        do {
+                            try await center.requestAuthorization(for: .individual)
+                        } catch {
+                            print("Fail: \(error)")
+                        }
+                    }
+                }
+        }
+    }
+}
+```
+
+엔트리 포인트인 App 구조체에 FamilyControls에 대한 권한을 요청 코드를 작성해야 합니다.
+
+iOS15에서는 가족 구성원 중 부모 권한의 승인이 있어야 실행가능 했지만, iOS16 버전부터 가족 구성원의 승인 없이 자신의 iPhone에 스스로 권한을 요청활 수 있도록 업데이트 되었습니다 (.individual 선택)
+
+### 2. ManagedSetting을 관리하는 객체
+
+---
+
+```swift
+import Foundation
+import FamilyControls
+import ManagedSettings
+
+class ManagedSettingModel: ObservableObject {
+    static var shared = ManagedSettingModel()
+    
+    let store = ManagedSettingsStore()
+    
+    @Published var selectionToDiscourage: FamilyActivitySelection
+    
+    init() {
+        selectionToDiscourage = FamilyActivitySelection()
+    }
+    
+		...
+}
+```
+
+권한을 제어하는 객체를 단 하나만 두기 위해 SingleTon패턴으로 ManagedSetting모델을 만들었습니다.
+
+싱글톤 패턴은 하나의 어플리케이션 내에서 하나의 인스턴스(객체)만 사용해야하는 상황에 구현합니다.
+
+어플리케이션 전체 영역에서 동일한 객체에 접근할 수 있는 장점 덕분에 유저 정보, 앱 설정과 같이, 인스턴스들이 꼬이는 상황을 방지하고, 메모리의 낭비를 막을 수 있습니다.
+
+현재 상황에서는 특히 어플리케이션의 제한과 해제를 제어하는 객체는 단 하나만 존재해야 꼬이지 않고, 의도치 않은 어플 제한/해제를 방지할 수 있어서 SingleTon패턴을 적용하였습니다.
+
+다른 파일에서는
+
+`ManagedSettingModel.shared.[ 메서드 혹은 프로퍼티 ]` 코드로 접근할 수 있습니다
+
+### 3. 앱 제한 및 해제 기능
+
+---
+
+```swift
+import Foundation
+import FamilyControls
+import ManagedSettings
+
+class ManagedSettingModel: ObservableObject {
+    ...
+    
+    func setShieldRestrictions() {
+        let applications = ManagedSettingModel.shared.selectionToDiscourage
+        
+        storeshield.applications = applications.applicationTokens.isEmpty ? nil : applications.applicationTokens
+        store.shield.applicationCategories = applications.categoryTokens.isEmpty ? nil : ShieldSettings.ActivityCategoryPolicy.specific(applications.categoryTokens)
+    }
+    
+    func freeShieldRestrictions() {
+        store.shield.applications = nil
+        store.shield.applicationCategories =  nil
+    }
+    
+    func isSelectionEmpty() -> Bool {
+        selectionToDiscourage.applicationTokens.isEmpty &&
+        selectionToDiscourage.categoryTokens.isEmpty &&
+        selectionToDiscourage.webDomainTokens.isEmpty
+    }
+    
+}
+```
+
+어플리케이션을 제한, 해제하기 위해서 `ManagedSettingsStore()` 의 `sheild` 의 `applications` 에 선택한 어플의 토큰값을 추가하거나 비워주어야 합니다.
+
+위 코드의 경우
+
+`setShieldRestrictions()` 메서드 선언하고 어플리케이션 토큰을 담을 수 있게 하였고
+
+`freeShieldRestrictions()` 메서드를 선언하고 어플리케이션 토큰을 비울 수 있게 하였습니다.
+
+이제 해당 메서드들을 필요한 시점에 실행 시켜주면 앱을 제한하거나 해제할 수 있습니다!
+
+### 4. 제한 할 앱을 선택하는 방법
+
+```swift
+import SwiftUI
+import FamilyControls
+
+struct RoutinePrepareView: View {
+		@EnvironmentObject var managedSettingModel: ManagedSettingModel
+    @State var isPresented = false
+    
+    var body: some View {
+        VStack { ... }
+        }
+        .familyActivityPicker(isPresented: $isPresented,
+											        selection: $managedSettingModel.selectionToDiscourage)
+
+    }
+}
+```
+
+View를 그릴 때, 최상위 뷰에 아래 수정자를 작성하고
+
+첫 번째 인자로는 true로 바뀔 수 있는 상태값
+
+두 번째 인자로는 선택한 앱의 토큰을 담을 수 있는 상태값
+
+을 대입하면 미리 구현된, 제한 할 앱을 선택하는 Modal뷰가 나타납니다.
+
+```swift
+.familyActivityPicker(isPresented: Binding<Bool>,
+selection: Binding<FamilyActivitySelection>)
+```
+
+그리고 그 Modal 뷰에서 앱을 선택하면 앱의 토큰들이 담기게 되고
+
+트리거가 되는 버튼에서`setShieldRestrictions()` 실행하면, 선택한 어플들은 사용이 제한 됩니다.
