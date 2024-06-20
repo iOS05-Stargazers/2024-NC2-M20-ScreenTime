@@ -56,7 +56,7 @@ $\color{#5c56d2} \bf 스크린타임$ $\color{#5c56d2} \bf 사용량$ $\color{#5
 
 
 ## 🖼️ Prototype
-(프로토타입과 설명 추가)
+![prototype](https://github.com/DeveloperAcademy-POSTECH/2024-NC2-M20-ScreenTime/blob/main/prototype.gif)
 
 ## 🛠️ About Code
 (핵심 코드에 대한 설명 추가)
