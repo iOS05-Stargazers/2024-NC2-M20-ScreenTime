@@ -57,6 +57,7 @@ $\color{#5c56d2} \bf 스크린타임$ $\color{#5c56d2} \bf 사용량$ $\color{#5
 
 ## 🖼️ Prototype
 ![prototype](https://github.com/DeveloperAcademy-POSTECH/2024-NC2-M20-ScreenTime/blob/main/prototype.gif)
+* 실행 과정을 빠르게 보여드리기 위해, 임의로 타이머의 시간을 25분과 5분 → 모두 2초로 조정하였습니다.
 
 ## 🛠️ About Code
 ### 1. ManagedSetting 권한 요청
