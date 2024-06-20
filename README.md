@@ -61,7 +61,6 @@ $\color{#5c56d2} \bf 스크린타임$ $\color{#5c56d2} \bf 사용량$ $\color{#5
 ## 🛠️ About Code
 ### 1. ManagedSetting 권한 요청
 
----
 
 ```swift
 import SwiftUI
@@ -94,7 +93,6 @@ iOS15에서는 가족 구성원 중 부모 권한의 승인이 있어야 실행�
 
 ### 2. ManagedSetting을 관리하는 객체
 
----
 
 ```swift
 import Foundation
@@ -130,7 +128,6 @@ class ManagedSettingModel: ObservableObject {
 
 ### 3. 앱 제한 및 해제 기능
 
----
 
 ```swift
 import Foundation
